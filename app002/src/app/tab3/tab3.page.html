@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      VIDEOS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+  <ion-item *ngFor="let video of video">
+    <ion-card class="welcome-card">
+    <ion-card-content>
+      
+      <img [src]="video.snippet.thumbnails.standard.url"(click)="openVideo(video)"/>
+      <div style="clear:left">{{video.snippet.publishedAt | date:'dd.MM.yyyy'}}</div>
+      <ion-text>{{video.snippet.title}}</ion-text>
+      <hr class="line"/>
+    </ion-card-content>
+    
+  </ion-card>
+  
+  </ion-item>
+  
+  </ion-list>
+</ion-content>
